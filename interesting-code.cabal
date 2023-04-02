@@ -32,10 +32,10 @@ library
   import:          common-options
   hs-source-dirs:  src
   exposed-modules: Test
-                   TypeConstraints,
-                   OneOfN.OneOfN,
-                   OneOfN.TH
-                   VOneOfN
+                   Utils,
+                   OneOfN,
+                   OneOfNGADTS
   other-modules:   
   build-depends:   first-class-families,
-                   template-haskell
+                   template-haskell,
+                   text
