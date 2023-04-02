@@ -1,6 +1,0 @@
-cradle:
-  multi:
-    # - path: "ignore/"
-    #   config: {cradle: {none: }}
-    - path: "src"
-      config: {cradle: {cabal: {component: "interesting-code:interesting-code-exe"}}}

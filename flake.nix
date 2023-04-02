@@ -13,7 +13,6 @@
               interesting-code = hfinal.callCabal2nix "interesting-code" ./. { };
             };
         };
-        interesting-code = final.haskell.lib.compose.justStaticExecutables final.haskellPackages.interesting-code;
       };
       perSystem = system:
         let
@@ -23,8 +22,9 @@
         {
           devShell = hspkgs.shellFor {
             withHoogle = true;
-            packages = p: [ p.interesting-code ];
+            packages = p: [ ];
             buildInputs = [
+              hspkgs.zlib
               hspkgs.cabal-install
               hspkgs.haskell-language-server
               hspkgs.hlint
@@ -32,7 +32,6 @@
               pkgs.bashInteractive
             ];
           };
-          defaultPackage = pkgs.interesting-code;
         };
     in
     { inherit overlay; } // 
